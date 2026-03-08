@@ -48,7 +48,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 public class KeygenForm {
-   private static final String Version = "v1.14";
+   private static final String Version = "v1.1";
    private static JFrame frame;
    private static JButton btn_run;
    private static JTextField text_cmd;
