@@ -6,6 +6,7 @@ Java Swing + Java Agent project that demonstrates runtime bytecode instrumentati
 
 Use this code only in environments you own or are explicitly authorized to test.
 Do not use it to bypass licensing, authentication, or legal restrictions.
+Only for Education Purpose. 
 
 ## Features
 
