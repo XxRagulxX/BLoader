@@ -1,0 +1,4 @@
+# Build files
+*.class
+*.jar
+*.config.ini
