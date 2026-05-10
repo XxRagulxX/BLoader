@@ -63,7 +63,6 @@ public class KeygenForm {
    private static JCheckBox check_autorun;
    private static JCheckBox check_ignore;
    private static String LatestVersion;
-   private static final String DownloadURL = "https://portswigger-cdn.net/burp/releases/download?product=pro&type=Jar&version=";
    private static final String LoaderPath;
    private static final String LoaderDir;
    private static final String ConfigFileName;
@@ -335,17 +334,27 @@ public class KeygenForm {
    }
 
       private static String GetLatestVersion() {
-      String result = GetHTTPBody("https://portswigger.net/burp/releases/data?pageSize=5");
-      int a = result.indexOf("\"BuildCategoryId\":\"pro\",\"BuildCategoryPlatform\":\"Jar\",\"BuildCategoryPlatformLabel\":\"JAR\"");
-      if (a == -1) {
-         return "";
-      } else {
-         result = result.substring(a + 184);
+         String result = GetHTTPBody("https://portswigger.net/burp/releases/data?pageSize=5");
+
+         int a = result.indexOf("\"BuildCategoryId\":\"desktop\",\"BuildCategoryPlatform\":\"Jar\",\"BuildCategoryPlatformLabel\":\"JAR\"");
+
+         if (a == -1) {
+            return "";
+         }
+
+         result = result.substring(a);
+         a = result.indexOf("\"Version\":\"");
+         
+         if (a == -1) {
+            return "";
+         }
+
+         result = result.substring(a + 11);
+
          a = result.indexOf("\"");
-         result = result.substring(0, a);
-         return result;
+
+         return result.substring(0, a);
       }
-   }
 
    public static void main(String[] args) {
       try {
@@ -375,7 +384,7 @@ public class KeygenForm {
       panel1 = new JPanel();
       panel2 = new JPanel();
       panel3 = new JPanel();
-      frame = new JFrame("Burp Suite Pro Loader & Keygen v1.1 - By burpsuite (greetings from XxRagulxX)");
+      frame = new JFrame("Burp Suite Pro Loader & Keygen v1.2 - By burpsuite (greetings from XxRagulxX)");
       btn_run = new JButton("Run");
       label0_1 = new JLabel("Checking the latest version of BurpSuite...");
       JLabel label1 = new JLabel("Loader Command:", 4);
@@ -523,7 +532,7 @@ public class KeygenForm {
                super.mouseClicked(e);
 
                try {
-                  Desktop.getDesktop().browse(new URI("https://portswigger-cdn.net/burp/releases/download?product=pro&type=Jar&version=" + KeygenForm.LatestVersion));
+                  Desktop.getDesktop().browse(new URI("https://portswigger-cdn.net/burp/releases/download?product=desktop&type=Jar&version=" + KeygenForm.LatestVersion));
                } catch (Exception var3) {
                }
 

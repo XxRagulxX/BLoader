@@ -97,5 +97,5 @@ the generated JAR can act as both the GUI app and a Java agent artifact.
 ## Development Notes
 
 - Source package: `com.burpsuite.burploaderkeygen`
-- UI/version string currently indicates `v1.1` in `KeygenForm.java`
+- UI/version string currently indicates `v1.2` in `KeygenForm.java`
 - Manifest file: `META-INF/MANIFEST.MF`
